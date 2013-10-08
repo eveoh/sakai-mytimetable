@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean id="mytimetable.sakai.service.SakaiProxyImpl" class="nl.eveoh.sakai.mytimetable.service.SakaiProxyImpl">
+        <property name="sessionManager" ref="org.sakaiproject.tool.api.SessionManager"/>
+    </bean>
+
+    <bean id="mytimetable.sakai.model.Configuration" class="nl.eveoh.sakai.mytimetable.model.Configuration"/>
+
+    <bean id="mytimetable.sakai.service.MyTimetableService"
+          class="nl.eveoh.sakai.mytimetable.service.MyTimetableServiceImpl"/>
+</beans>

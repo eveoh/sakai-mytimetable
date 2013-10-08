@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="order" value="10"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="nl.eveoh.sakai.mytimetable.exception.LocalizableException">localizableException</prop>
+            </props>
+        </property>
+        <property name="defaultErrorView" value="uncaughtException"/>
+    </bean>
+
+    <bean name="/index.htm" class="nl.eveoh.sakai.mytimetable.tool.ToolController">
+        <property name="configuration" ref="mytimetable.sakai.model.Configuration"/>
+        <property name="service" ref="mytimetable.sakai.service.MyTimetableService"/>
+        <property name="sakaiProxy" ref="mytimetable.sakai.service.SakaiProxyImpl" />
+    </bean>
+</beans>

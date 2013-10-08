@@ -1,0 +1,175 @@
+[
+    {
+        "activityDescription": "Roadmap",
+        "activityTypeDescription": "Miscellanious",
+        "activityTypeName": "other",
+        "endDate": 1381831800000,
+        "locations": [],
+        "moduleCode": null,
+        "notes": null,
+        "staffMembers": [
+            "Mr. L. Albers",
+            "Mr. R. van der Veer",
+            "Mr. T. Tijdeman"
+        ],
+        "startDate": 1381821600000,
+        "studentSets": []
+    },
+    {
+        "activityDescription": "TH_SELECTION DAY meeting",
+        "activityTypeDescription": "class in The Hague",
+        "activityTypeName": "other",
+        "endDate": 1381849200000,
+        "locations": [
+            {
+                "avoidConcurrencyLocationIds": [],
+                "capacity": 160,
+                "id": "769C6632ABB6224A686C8ACBC7E516E3",
+                "key": "Aula",
+                "name": "th_Aula",
+                "url": null
+            }
+        ],
+        "moduleCode": "TH_Operations",
+        "notes": null,
+        "staffMembers": [
+            "Mr. A. Kapur",
+            "Mr. A. van Rheede",
+            "Mr. A.F. van der Broek",
+            "Mr. D.J. Russell",
+            "Mr. E.A. Keehnen",
+            "Mr. F. de Vries",
+            "Mr. F. Fagel",
+            "Mr. G. Boender",
+            "Mr. G.L. Hepburn",
+            "Mr. J. F.Kipp",
+            "Mr. J. Huizing",
+            "Mr. J.I. van der Rest",
+            "Mr. J.W.M. van Brouwershaven",
+            "Mr. L. Albers",
+            "Mr. R. Gallicano",
+            "Mr. R. van der Veer",
+            "Mr. R.C. Nierse",
+            "Mr. R.W. Kers",
+            "Mr. S.H.G. Dechesne",
+            "Mr. S.L. Feigenbaum",
+            "Mr. S.M. Allegro",
+            "Mr. T. Tijdeman",
+            "Ms D. Dekker",
+            "Ms I. Son",
+            "Ms J. Lundy",
+            "Ms.  C.J.W. Valk",
+            "Ms. A. de Korte",
+            "Ms. A. Kappert-White",
+            "Ms. A.L. de Visser-Amundson",
+            "Ms. A.P. Smulders",
+            "Ms. A.R.A.H. Schepel",
+            "Ms. C. Leenders",
+            "Ms. C.L. Newton",
+            "Ms. D. Verschoor-de Leeuw",
+            "Ms. D.M. Tromp",
+            "Ms. E.M. Leur",
+            "Ms. F. Hauffmann",
+            "Ms. G.J. Smit",
+            "Ms. H.A. van den Hout",
+            "Ms. I. Geerink",
+            "Ms. I.I. Wurffel",
+            "Ms. I.M. B. Maas",
+            "Ms. J.M.H. Sok",
+            "Ms. J.M.J. Wouters-van Broekhuizen",
+            "Ms. L.A. Koupriouchina",
+            "Ms. M.D. Suner",
+            "Ms. M.M. van Prooijen-Lander",
+            "Ms. Q.J.H. Zeggen",
+            "Ms. S. Paoletti",
+            "Ms. S. Williams.",
+            "Ms. W.H.F. Smeets"
+        ],
+        "startDate": 1381842000000,
+        "studentSets": []
+    },
+    {
+        "activityDescription": "23",
+        "activityTypeDescription": "examens  (assesment week)",
+        "activityTypeName": "other",
+        "endDate": 1381914000000,
+        "locations": [
+            {
+                "avoidConcurrencyLocationIds": [
+                    "2AF82C9467C273EDFBD497D556B79C7F",
+                    "2AF82C9467C273EDFBD497D556B79C80",
+                    "2AF82C9467C273EDFBD497D556B79C81"
+                ],
+                "capacity": 80,
+                "id": "769C6632ABB6224A686C8ACBC7E516EA",
+                "key": "NO1 (b)",
+                "name": "th_NO1 (b)",
+                "url": null
+            },
+            {
+                "avoidConcurrencyLocationIds": [],
+                "capacity": 22,
+                "id": "769C6632ABB6224A686C8ACBC7E516F5",
+                "key": "SO4 (b)",
+                "name": "th_SO4 (b)",
+                "url": null
+            }
+        ],
+        "moduleCode": "TH_BA_Exams",
+        "notes": null,
+        "staffMembers": [
+            "Mr. G. Boender",
+            "Mr. T. Tijdeman"
+        ],
+        "startDate": 1381905000000,
+        "studentSets": []
+    },
+    {
+        "activityDescription": "AM_iABI_Meeting",
+        "activityTypeDescription": "class in Amsterdam",
+        "activityTypeName": "other",
+        "endDate": 1382014200000,
+        "locations": [
+            {
+                "avoidConcurrencyLocationIds": [],
+                "capacity": 24,
+                "id": "C5735763407500071DE12292B15E2A56",
+                "key": "CR.08",
+                "name": "am_CR 0.08 (24)",
+                "url": null
+            }
+        ],
+        "moduleCode": "AM_BA_iABI",
+        "notes": null,
+        "staffMembers": [
+            "Mr. T. Tijdeman"
+        ],
+        "startDate": 1382008200000,
+        "studentSets": []
+    },
+    {
+        "activityDescription": "AM_PARENTS' DAY",
+        "activityTypeDescription": "class in Amsterdam",
+        "activityTypeName": "other",
+        "endDate": 1382209200000,
+        "locations": [],
+        "moduleCode": "AM_Operations",
+        "notes": null,
+        "staffMembers": [
+            "Mr. A. van Rheede",
+            "Mr. F. Fagel",
+            "Mr. L. Albers",
+            "Mr. R.W. Kers",
+            "Mr. S. Gropas",
+            "Mr. T. Tijdeman",
+            "Ms.  C.J.W. Valk",
+            "Ms. A. Kappert-White",
+            "Ms. A.R.A.H. Schepel",
+            "Ms. I.M. B. Maas",
+            "Ms. J.M.H. Sok",
+            "Ms. S. Paoletti"
+        ],
+        "startDate": 1382162400000,
+        "studentSets": []
+    }
+]

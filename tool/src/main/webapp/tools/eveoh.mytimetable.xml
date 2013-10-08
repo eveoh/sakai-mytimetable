@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<registration>
+    <tool id="eveoh.mytimetable" title="MyTimetable upcoming activities"
+          description="This tool shows the upcoming activities in the timetable of the logged in user.">
+
+        <category name="myworkspace"/>
+
+        <configuration name="reset.button" value="false"/>
+        <configuration name="help.button" value="false"/>
+    </tool>
+</registration>
+
