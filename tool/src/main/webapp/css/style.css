@@ -49,7 +49,6 @@ table.eveoh-upcoming-activities tr td.location span {
 }
 
 table.eveoh-upcoming-activities tr td.location ul {
-    list-style: none;
-    padding: 0;
+    padding: 0 0 0 25px;
     margin: 0;
 }

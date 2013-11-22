@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>tomcat-overlay</id>
+
+    <formats>
+        <format>zip</format>
+        <format>tar.gz</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <dependencySets>
+        <!-- Put sakai.mytimetable-api JAR in shared/lib. -->
+        <dependencySet>
+            <outputDirectory>shared/lib</outputDirectory>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputFileNameMapping>${artifact.artifactId}.jar</outputFileNameMapping>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <includes>
+                <include>nl.eveoh.sakai:sakai-mytimetable-api:jar:*</include>
+            </includes>
+        </dependencySet>
+
+        <!-- Put sakai.mytimetable-pack WAR in components/sakai.mytimetable-pack and unpack the WAR. -->
+        <dependencySet>
+            <outputDirectory>components/sakai-mytimetable-pack</outputDirectory>
+            <useProjectArtifact>false</useProjectArtifact>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <includes>
+                <include>nl.eveoh.sakai:sakai-mytimetable-pack:war:*</include>
+            </includes>
+            <unpack>true</unpack>
+        </dependencySet>
+
+        <!-- Put sakai.mytimetable-tool WAR in webapps/sakai.mytimetable-tool and unpack the WAR. -->
+        <dependencySet>
+            <outputDirectory>webapps/sakai-mytimetable-tool</outputDirectory>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputFileNameMapping>${artifact.artifactId}.war</outputFileNameMapping>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <includes>
+                <include>nl.eveoh.sakai:sakai-mytimetable-tool:war:*</include>
+            </includes>
+            <unpack>true</unpack>
+        </dependencySet>
+    </dependencySets>
+</assembly>

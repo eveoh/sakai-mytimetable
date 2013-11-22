@@ -2,14 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>sakai.mytimetable</artifactId>
-        <groupId>nl.eveoh</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-    <groupId>nl.eveoh</groupId>
-    <artifactId>sakai.mytimetable-pack</artifactId>
 
+    <parent>
+        <artifactId>sakai-mytimetable</artifactId>
+        <groupId>nl.eveoh.sakai</groupId>
+        <version>1.0-RELEASE</version>
+    </parent>
+
+    <name>MyTimetable tool for Sakai CLE - pack</name>
+    <artifactId>sakai-mytimetable-pack</artifactId>
+    <version>1.0-RELEASE</version>
     <packaging>sakai-component</packaging>
 
     <properties>
@@ -17,24 +19,24 @@
     </properties>
 
     <dependencies>
-        <!-- internal dependencies -->
         <dependency>
-            <groupId>nl.eveoh</groupId>
-            <artifactId>sakai.mytimetable-impl</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>nl.eveoh.sakai</groupId>
+            <artifactId>sakai-mytimetable-impl</artifactId>
+            <version>1.0-RELEASE</version>
         </dependency>
 
         <dependency>
-            <groupId>nl.eveoh</groupId>
-            <artifactId>sakai.mytimetable-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>nl.eveoh.sakai</groupId>
+            <artifactId>sakai-mytimetable-api</artifactId>
+            <version>1.0-RELEASE</version>
         </dependency>
     </dependencies>
 
     <build>
-        <!-- configure the build to use the standard maven structure -->
-        <sourceDirectory>src/main/java</sourceDirectory>
+        <sourceDirectory>src/main/webapp</sourceDirectory>
+
         <plugins>
+            <!-- This adds components.xml to the WAR archive. -->
             <plugin>
                 <inherited>true</inherited>
                 <groupId>org.sakaiproject.maven.plugins</groupId>
