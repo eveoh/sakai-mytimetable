@@ -1,5 +1,5 @@
 /*
- * Eveoh MyTimetable, Web interface for timetables.
+ * MyTimetable tool for Sakai CLE.
  *
  * Copyright (c) 2010 - 2013 Eveoh
  *
@@ -23,9 +23,9 @@ package nl.eveoh.sakai.mytimetable.model;
 /**
  * Configuration bean for the tool.
  * <p/>
- * This bean can be configured in <tt>sakai.properties</tt> using the format 
- * <tt>property@mytimetable.sakai.configuration=value</tt>,
- * for example <tt>apiEndpointUri@mytimetable.sakai.configuration=https://timetable.institution.ac.uk/api/v0/</tt>.
+ * This bean can be configured in <tt>sakai.properties</tt> using the format
+ * <tt>property@mytimetable.sakai.model.Configuration=value</tt>,
+ * for example <tt>apiEndpointUri@mytimetable.sakai.model.Configuration=https://timetable.institution.ac.uk/api/v0/</tt>.
  *
  * @author Marco Krikke
  */

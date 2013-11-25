@@ -1,5 +1,5 @@
 /*
- * Eveoh MyTimetable, Web interface for timetables.
+ * MyTimetable tool for Sakai CLE.
  *
  * Copyright (c) 2010 - 2013 Eveoh
  *

@@ -1,5 +1,5 @@
 /*
- * Eveoh MyTimetable, Web interface for timetables.
+ * MyTimetable tool for Sakai CLE.
  *
  * Copyright (c) 2010 - 2013 Eveoh
  *
@@ -31,7 +31,6 @@ public interface MyTimetableService {
      *
      * @param userId        userId of the user to get the events of.
      * @param configuration Configuration bean.
-     *
      * @return List of events for the user.
      */
     public List<Event> getEvents(String userId, Configuration configuration);

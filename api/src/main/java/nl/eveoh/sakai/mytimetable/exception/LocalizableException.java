@@ -1,5 +1,5 @@
 /*
- * Eveoh MyTimetable, Web interface for timetables.
+ * MyTimetable tool for Sakai CLE.
  *
  * Copyright (c) 2010 - 2013 Eveoh
  *
@@ -28,7 +28,7 @@ package nl.eveoh.sakai.mytimetable.exception;
 public class LocalizableException extends RuntimeException {
     /**
      * Key as used in the resource bundle.
-     *
+     * <p/>
      * Defaults to <tt>error</tt>.
      */
     private String resourceBundleKey = "error";
@@ -42,7 +42,6 @@ public class LocalizableException extends RuntimeException {
 
     /**
      * @param resourceBundleKey Key used for translations.
-     *
      * @see RuntimeException#RuntimeException(String)
      */
     public LocalizableException(String message, String resourceBundleKey) {
@@ -59,7 +58,6 @@ public class LocalizableException extends RuntimeException {
 
     /**
      * @param resourceBundleKey Key used for translations.
-     *
      * @see RuntimeException#RuntimeException(String, Throwable)
      */
     public LocalizableException(String message, Throwable cause, String resourceBundleKey) {

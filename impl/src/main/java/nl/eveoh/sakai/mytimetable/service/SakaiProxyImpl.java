@@ -1,5 +1,5 @@
 /*
- * Eveoh MyTimetable, Web interface for timetables.
+ * MyTimetable tool for Sakai CLE.
  *
  * Copyright (c) 2010 - 2013 Eveoh
  *
@@ -25,8 +25,8 @@ import org.sakaiproject.tool.api.SessionManager;
 /**
  * Implementation of the SakaiProxy interface.
  *
- * @see SakaiProxy
  * @author Marco Krikke
+ * @see SakaiProxy
  */
 public class SakaiProxyImpl implements SakaiProxy {
     private SessionManager sessionManager;

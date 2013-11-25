@@ -1,5 +1,5 @@
 /*
- * Eveoh MyTimetable, Web interface for timetables.
+ * MyTimetable tool for Sakai CLE.
  *
  * Copyright (c) 2010 - 2013 Eveoh
  *
@@ -45,8 +45,8 @@ import java.util.List;
 /**
  * Implementation of the MyTimetableService interface.
  *
- * @see MyTimetableService
  * @author Marco Krikke
+ * @see MyTimetableService
  */
 public class MyTimetableServiceImpl implements MyTimetableService {
     private static final Logger log = Logger.getLogger(MyTimetableServiceImpl.class);
