@@ -127,6 +127,14 @@ public class MyTimetableServiceImplTest {
         Assert.assertEquals("23", e.getActivityDescription());
     }
 
+    @Test
+    public void testNotLoggedIn() throws Exception {
+        exception.expect(LocalizableException.class);
+
+        service.getEvents(null, configuration);
+        service.getEvents("", configuration);
+    }
+
     private HttpResponse prepareResponse(int expectedResponseStatus, String expectedResponseBody) {
         HttpResponse response = new BasicHttpResponse(
                 new BasicStatusLine(new ProtocolVersion("HTTP", 1, 1), expectedResponseStatus, ""));
