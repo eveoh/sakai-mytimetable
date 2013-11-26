@@ -6,12 +6,12 @@
     <parent>
         <artifactId>sakai-mytimetable</artifactId>
         <groupId>nl.eveoh.sakai</groupId>
-        <version>1.0-RELEASE</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
 
     <name>MyTimetable tool for Sakai CLE - pack</name>
     <artifactId>sakai-mytimetable-pack</artifactId>
-    <version>1.0-RELEASE</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>sakai-component</packaging>
 
     <properties>
@@ -22,13 +22,13 @@
         <dependency>
             <groupId>nl.eveoh.sakai</groupId>
             <artifactId>sakai-mytimetable-impl</artifactId>
-            <version>1.0-RELEASE</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>nl.eveoh.sakai</groupId>
             <artifactId>sakai-mytimetable-api</artifactId>
-            <version>1.0-RELEASE</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

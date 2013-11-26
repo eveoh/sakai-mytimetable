@@ -14,7 +14,7 @@
 
     <groupId>nl.eveoh.sakai</groupId>
     <artifactId>sakai-mytimetable</artifactId>
-    <version>1.0-RELEASE</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -35,14 +35,14 @@
             <dependency>
                 <groupId>nl.eveoh.sakai</groupId>
                 <artifactId>sakai-mytimetable-api</artifactId>
-                <version>1.0-RELEASE</version>
+                <version>1.0.1-SNAPSHOT</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>nl.eveoh.sakai</groupId>
                 <artifactId>sakai-mytimetable-impl</artifactId>
-                <version>1.0-RELEASE</version>
+                <version>1.0.1-SNAPSHOT</version>
                 <scope>runtime</scope>
             </dependency>
 

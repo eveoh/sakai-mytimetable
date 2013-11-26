@@ -7,33 +7,33 @@
     <parent>
         <artifactId>sakai-mytimetable</artifactId>
         <groupId>nl.eveoh.sakai</groupId>
-        <version>1.0-RELEASE</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
 
     <name>MyTimetable tool for Sakai CLE - assembly</name>
     <artifactId>sakai-mytimetable-assembly</artifactId>
-    <version>1.0-RELEASE</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
             <groupId>nl.eveoh.sakai</groupId>
             <artifactId>sakai-mytimetable-api</artifactId>
-            <version>1.0-RELEASE</version>
+            <version>1.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>nl.eveoh.sakai</groupId>
             <artifactId>sakai-mytimetable-impl</artifactId>
-            <version>1.0-RELEASE</version>
+            <version>1.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>nl.eveoh.sakai</groupId>
             <artifactId>sakai-mytimetable-pack</artifactId>
-            <version>1.0-RELEASE</version>
+            <version>1.0.1-SNAPSHOT</version>
             <scope>compile</scope>
             <type>war</type>
         </dependency>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>nl.eveoh.sakai</groupId>
             <artifactId>sakai-mytimetable-tool</artifactId>
-            <version>1.0-RELEASE</version>
+            <version>1.0.1-SNAPSHOT</version>
             <scope>compile</scope>
             <type>war</type>
         </dependency>

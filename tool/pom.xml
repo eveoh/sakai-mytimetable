@@ -6,12 +6,12 @@
     <parent>
         <artifactId>sakai-mytimetable</artifactId>
         <groupId>nl.eveoh.sakai</groupId>
-        <version>1.0-RELEASE</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
 
     <name>MyTimetable tool for Sakai CLE - tool</name>
     <artifactId>sakai-mytimetable-tool</artifactId>
-    <version>1.0-RELEASE</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <dependencies>
