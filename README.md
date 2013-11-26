@@ -75,6 +75,15 @@ Tomcat overlay in both zip and tar.gz format.
 
 Run `mvn clean deploy`. Artifacts will be deployed using SCP to the Maven repository as configured in the main POM.
 
+## Releasing
+
+The tool can be released using the Maven Release plugin.
+
+````
+mvn release:prepare
+mvn release:perform
+````
+
 ## MyTimetable API
 
 Documentation for the MyTimetable API is available at https://wiki.eveoh.nl/display/MYTT/API+Documentation.

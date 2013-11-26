@@ -30,6 +30,25 @@
         <module>pack</module>
     </modules>
 
+    <scm>
+        <connection>scm:git:git@github.com:eveoh/sakai-mytimetable.git</connection>
+        <developerConnection>scm:git:git@github.com:eveoh/sakai-mytimetable.git</developerConnection>
+        <url>scm:git:git@github.com:eveoh/sakai-mytimetable.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>localrepo</id>
+            <name>Local Maven repository</name>
+            <url>file:///${user.home}/.m2/repository</url>
+        </snapshotRepository>
+        <repository>
+            <id>ssh-repository</id>
+            <url>scpexe://p-web-01.eveoh.nl//var/www/dl.eveoh.nl/maven2</url>
+        </repository>
+    </distributionManagement>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -86,13 +105,6 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <distributionManagement>
-        <repository>
-            <id>ssh-repository</id>
-            <url>scpexe://p-web-01.eveoh.nl//var/www/dl.eveoh.nl/maven2</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <extensions>
             <extension>
@@ -103,6 +115,25 @@
                 <version>2.2</version>
             </extension>
         </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <localCheckout>true</localCheckout>
+                    <pushChanges>false</pushChanges>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+
+                    <!-- prevent creating Javadocs etc. -->
+                    <useReleaseProfile>false</useReleaseProfile>
+
+                    <!-- point to local git repo to prevent remote checkout during perform phase -->
+                    <connectionUrl>scm:git:file:///${basedir}</connectionUrl>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
     <profiles>
