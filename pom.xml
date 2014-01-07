@@ -38,15 +38,16 @@
     </scm>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>localrepo</id>
-            <name>Local Maven repository</name>
-            <url>file:///${user.home}/.m2/repository</url>
-        </snapshotRepository>
         <repository>
-            <id>ssh-repository</id>
-            <url>scpexe://p-web-01.eveoh.nl//var/www/dl.eveoh.nl/maven2</url>
+            <id>eveoh-public</id>
+            <name>Eveoh public Maven repo</name>
+            <url>https://maven.eveoh.nl/content/repositories/releases/</url>
         </repository>
+        <snapshotRepository>
+            <id>eveoh-public</id>
+            <name>Eveoh public Maven repo</name>
+            <url>https://maven.eveoh.nl/content/repositories/snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <dependencyManagement>
@@ -75,20 +76,10 @@
 
     <repositories>
         <repository>
-            <id>sakai-maven</id>
-            <name>Sakai Maven Repo</name>
-            <layout>default</layout>
-            <url>http://source.sakaiproject.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-
-        <repository>
             <id>eveoh-public</id>
             <name>Eveoh public Maven repo</name>
             <layout>default</layout>
-            <url>http://dl.eveoh.nl/maven2</url>
+            <url>https://maven.eveoh.nl/content/groups/public</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -98,7 +89,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>Sakai Plugin Repo</id>
-            <url>http://source.sakaiproject.org/maven2</url>
+            <url>https://maven.eveoh.nl/content/groups/public</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
