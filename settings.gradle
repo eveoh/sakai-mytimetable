@@ -1,0 +1,13 @@
+rootProject.name = 'sakai-mytimetable'
+
+include ':sakai-mytimetable-api'
+include ':sakai-mytimetable-assembly'
+include ':sakai-mytimetable-impl'
+include ':sakai-mytimetable-tool'
+include ':sakai-mytimetable-pack'
+
+project(':sakai-mytimetable-api').projectDir = "$rootDir/api" as File
+project(':sakai-mytimetable-assembly').projectDir = "$rootDir/assembly" as File
+project(':sakai-mytimetable-impl').projectDir = "$rootDir/impl" as File
+project(':sakai-mytimetable-tool').projectDir = "$rootDir/tool" as File
+project(':sakai-mytimetable-pack').projectDir = "$rootDir/pack" as File

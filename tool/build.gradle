@@ -1,0 +1,29 @@
+description = 'MyTimetable tool for Sakai CLE - tool'
+
+jar.enabled = false
+
+dependencies {
+    compile "org.springframework:spring-webmvc:${springVersion}"
+
+    compile "log4j:log4j:${log4jVersion}"
+    compile "org.sakaiproject.kernel:sakai-kernel-util:${sakaiVersion}"
+
+    runtime('org.sakaiproject:sakai-jsp-adapter:0.10-K1') {
+        exclude(module: 'sakai-kernel-api')
+    }
+
+    providedCompile project(':sakai-mytimetable-api')
+
+    providedCompile "org.springframework:spring:${springVersion}"
+    providedCompile "org.springframework:spring-web:${springVersion}"
+    providedCompile "org.sakaiproject.kernel:sakai-kernel-api:${sakaiVersion}"
+    providedCompile "org.sakaiproject.kernel:sakai-component-manager:${sakaiVersion}"
+    providedCompile 'javax.servlet:servlet-api:2.4'
+
+    compile 'javax.servlet:jstl:1.1.2'
+    compile 'taglibs:standard:1.1.2'
+
+    testCompile "junit:junit:${jUnitVersion}"
+    testCompile "org.mockito:mockito-core:${mockitoVersion}"
+    testCompile "org.springframework:spring-test:${springVersion}"
+}

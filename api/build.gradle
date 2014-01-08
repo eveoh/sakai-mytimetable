@@ -1,0 +1,9 @@
+description = 'MyTimetable tool for Sakai CLE - api'
+
+dependencies {
+    compile "org.sakaiproject.kernel:sakai-kernel-util:${sakaiVersion}"
+    
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+
+    runtime "org.sakaiproject.kernel:sakai-kernel-api:${sakaiVersion}"
+}

@@ -1,0 +1,33 @@
+apply plugin: 'distribution'
+
+distributions {
+    main {
+        baseName = 'sakai-mytimetable-tomcat-overlay'
+
+        contents {
+            into('shared/lib') {
+                from parent.project(':sakai-mytimetable-api').tasks['jar'].archivePath
+            }
+
+            into('components/sakai-mytimetable-pack') {
+                // unzip the WAR archive
+                from zipTree(project(':sakai-mytimetable-pack').tasks['war'].archivePath)
+            }
+
+            into('webapps/sakai-mytimetable-tool') {
+                // unzip the WAR archive
+                from zipTree(project(':sakai-mytimetable-tool').tasks['war'].archivePath)
+            }
+        }
+    }
+}
+
+distZip.dependsOn ':sakai-mytimetable-pack:war'
+distZip.dependsOn ':sakai-mytimetable-tool:war'
+
+distTar.dependsOn ':sakai-mytimetable-pack:war'
+distTar.dependsOn ':sakai-mytimetable-tool:war'
+
+distTar {
+    compression = Compression.GZIP
+}

@@ -8,28 +8,11 @@
 
 This tool is tested with Sakai 2.8.0 (Kernel 1.2.1).
 
-### Method 1: Extract Tomcat overlay
+### Extract Tomcat overlay
 
 1. Download the [Tomcat overlay], or build it yourself (see below).
 
 2. Unzip de archive in the Tomcat home directory `$CATALINA_HOME`.
-
-3. Configure the tool in `sakai.properties`.
-
-4. Restart Tomcat
-
-5. Add the MyTimetable tool to a page.
-
-### Method 2: Deploy from source using Maven
-
-It is assumed that Sakai on the server is [installed from source](https://confluence.sakaiproject.org/pages/viewpage.action?pageId=75106836).
-This means that Maven has been installed on the server and has been properly configured, especially the settings.xml
-file that specifies the location of your Tomcat installation.
-
-1. Download the [source] from GitHub and unzip.
-
-2. Build the MyTimetable tool using `mvn clean install sakai:deploy`. All the required files are put in the Tomcat home
-directory `$CATALINA_HOME`.
 
 3. Configure the tool in `sakai.properties`.
 
@@ -63,26 +46,8 @@ numberOfEvents@mytimetable.sakai.model.Configuration=5
 
 ### Creating a package
 
-Run `mvn clean package`. Artifacts will be available in the `target/` directories of all Maven modules. The 'assembly'
-module contains the Tomcat overlay in both zip and tar.gz format.
-
-### Deploying to local Maven repository
-
-Run `mvn clean install`. Artifacts will be deployed to your local Maven repository. The 'assembly' module contains the
-Tomcat overlay in both zip and tar.gz format.
-
-### Deploying to remote Maven repository
-
-Run `mvn clean deploy`. Artifacts will be deployed using SCP to the Maven repository as configured in the main POM.
-
-## Releasing
-
-The tool can be released using the Maven Release plugin.
-
-````
-mvn release:prepare
-mvn release:perform
-````
+Run `./gradlew clean distZip` (*nix / Mac OS X) or `gradlew.bat clean distZip` (Windows). The 'assembly' module now
+contains the Tomcat overlay in ZIP format (in folder `assembly/build/distributions/`).
 
 ## MyTimetable API
 

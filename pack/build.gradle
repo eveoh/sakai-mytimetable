@@ -1,0 +1,9 @@
+description = 'MyTimetable tool for Sakai CLE - pack'
+
+jar.enabled = false
+
+dependencies {
+    compile project(':sakai-mytimetable-api')
+
+    runtime project(':sakai-mytimetable-impl')
+}

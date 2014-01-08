@@ -1,0 +1,35 @@
+allprojects {
+    group = 'nl.eveoh.sakai'
+    version = '1.0.1-SNAPSHOT'
+}
+
+ext {
+    springVersion = '2.5.6.SEC03'
+    jacksonVersion = '2.2.2'
+    sakaiVersion = '1.3.0-a01'
+
+    log4jVersion = '1.2.17'
+    jUnitVersion = '4.11'
+    mockitoVersion = '1.9.5'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.5
+    targetCompatibility = 1.5
+
+    repositories {
+        maven {
+            url "https://maven.eveoh.nl/content/groups/public"
+        }
+    }
+}
+
+project(":sakai-mytimetable-pack") {
+    apply plugin: 'war'
+}
+
+project(":sakai-mytimetable-tool") {
+    apply plugin: 'war'
+}
