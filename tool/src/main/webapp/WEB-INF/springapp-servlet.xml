@@ -11,15 +11,15 @@
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
-                <prop key="nl.eveoh.sakai.mytimetable.exception.LocalizableException">localizableException</prop>
+                <prop key="nl.eveoh.mytimetable.apiclient.exception.LocalizableException">localizableException</prop>
             </props>
         </property>
         <property name="defaultErrorView" value="uncaughtException"/>
     </bean>
 
     <bean name="/index.htm" class="nl.eveoh.sakai.mytimetable.tool.ToolController">
-        <property name="configuration" ref="mytimetable.sakai.model.Configuration"/>
         <property name="service" ref="mytimetable.sakai.service.MyTimetableService"/>
         <property name="sakaiProxy" ref="mytimetable.sakai.service.SakaiProxyImpl" />
+        <property name="configuration" ref="mytimetable.sakai.model.Configuration" />
     </bean>
 </beans>

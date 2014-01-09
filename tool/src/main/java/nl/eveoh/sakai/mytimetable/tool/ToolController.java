@@ -20,8 +20,8 @@
 
 package nl.eveoh.sakai.mytimetable.tool;
 
-import nl.eveoh.sakai.mytimetable.model.Configuration;
-import nl.eveoh.sakai.mytimetable.service.MyTimetableService;
+import nl.eveoh.mytimetable.apiclient.configuration.Configuration;
+import nl.eveoh.mytimetable.apiclient.service.MyTimetableServiceImpl;
 import nl.eveoh.sakai.mytimetable.service.SakaiProxy;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -40,7 +40,7 @@ public class ToolController implements Controller {
     /**
      * MyTimetable API endpoint service.
      */
-    private MyTimetableService service;
+    private MyTimetableServiceImpl service;
 
     /**
      * Sakai proxy service.
@@ -48,25 +48,25 @@ public class ToolController implements Controller {
     private SakaiProxy sakaiProxy;
 
     /**
-     * Configuration bean.
+     * MyTimetable API configuration bean.
      */
     private Configuration configuration;
 
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("events", service.getEvents(sakaiProxy.getCurrentUserId(), configuration));
+        map.put("events", service.getUpcomingEvents(sakaiProxy.getCurrentUserId()));
         map.put("applicationUri", configuration.getApplicationUri());
         map.put("applicationTarget", configuration.getApplicationTarget());
 
         return new ModelAndView("index", map);
     }
 
-    public void setService(MyTimetableService service) {
-        this.service = service;
+    public MyTimetableServiceImpl getService() {
+        return service;
     }
 
-    public void setConfiguration(Configuration configuration) {
-        this.configuration = configuration;
+    public void setService(MyTimetableServiceImpl service) {
+        this.service = service;
     }
 
     public SakaiProxy getSakaiProxy() {
@@ -75,5 +75,13 @@ public class ToolController implements Controller {
 
     public void setSakaiProxy(SakaiProxy sakaiProxy) {
         this.sakaiProxy = sakaiProxy;
+    }
+
+    public Configuration getConfiguration() {
+        return configuration;
+    }
+
+    public void setConfiguration(Configuration configuration) {
+        this.configuration = configuration;
     }
 }

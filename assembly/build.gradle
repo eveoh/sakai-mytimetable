@@ -1,5 +1,16 @@
 apply plugin: 'distribution'
 
+configurations {
+    shared
+
+    all*.exclude group: 'commons-logging', module: 'commons-logging'
+}
+
+dependencies {
+    shared 'nl.eveoh.mytimetable:mytimetable-api-client:1.1.1'
+    shared 'org.slf4j:slf4j-log4j12:1.7.5'
+}
+
 distributions {
     main {
         baseName = 'sakai-mytimetable-tomcat-overlay'
@@ -7,6 +18,9 @@ distributions {
         contents {
             into('shared/lib') {
                 from parent.project(':sakai-mytimetable-api').tasks['jar'].archivePath
+
+                // Include the MyTimetable Client API
+                from configurations.shared.files
             }
 
             into('components/sakai-mytimetable-pack') {

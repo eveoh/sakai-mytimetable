@@ -5,5 +5,20 @@ jar.enabled = false
 dependencies {
     compile project(':sakai-mytimetable-api')
 
+    compile 'nl.eveoh.mytimetable:mytimetable-api-client:1.1.1'
+
+    compile 'org.apache.httpcomponents:httpclient:4.3.1'
+    compile 'org.apache.commons:commons-lang3:3.1'
+    compile 'org.apache.commons:commons-io:1.3.2'
+
+    compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    compile "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:${jacksonVersion}"
+
+    testCompile "junit:junit:${jUnitVersion}"
+    testCompile "org.mockito:mockito-core:${mockitoVersion}"
+    testCompile "org.springframework:spring-test:${springVersion}"
+
     runtime project(':sakai-mytimetable-impl')
 }

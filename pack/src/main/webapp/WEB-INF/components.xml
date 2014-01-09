@@ -6,8 +6,9 @@
         <property name="sessionManager" ref="org.sakaiproject.tool.api.SessionManager"/>
     </bean>
 
-    <bean id="mytimetable.sakai.model.Configuration" class="nl.eveoh.sakai.mytimetable.model.Configuration"/>
-
     <bean id="mytimetable.sakai.service.MyTimetableService"
-          class="nl.eveoh.sakai.mytimetable.service.MyTimetableServiceImpl"/>
+          class="nl.eveoh.mytimetable.apiclient.service.MyTimetableServiceImpl" destroy-method="close">
+        <!-- The configuration bean is present in $CATALINA_HOME/sakai/sakai-configuration.xml. Wire it into the service here. -->
+        <constructor-arg index="0" ref="mytimetable.sakai.model.Configuration"/>
+    </bean>
 </beans>

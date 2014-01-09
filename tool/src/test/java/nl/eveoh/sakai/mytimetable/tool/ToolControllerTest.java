@@ -20,10 +20,10 @@
 
 package nl.eveoh.sakai.mytimetable.tool;
 
-import nl.eveoh.sakai.mytimetable.exception.LocalizableException;
-import nl.eveoh.sakai.mytimetable.model.Configuration;
-import nl.eveoh.sakai.mytimetable.model.Event;
-import nl.eveoh.sakai.mytimetable.service.MyTimetableService;
+import nl.eveoh.mytimetable.apiclient.configuration.Configuration;
+import nl.eveoh.mytimetable.apiclient.exception.LocalizableException;
+import nl.eveoh.mytimetable.apiclient.model.Event;
+import nl.eveoh.mytimetable.apiclient.service.MyTimetableServiceImpl;
 import nl.eveoh.sakai.mytimetable.service.SakaiProxy;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -47,7 +47,7 @@ import java.util.List;
 @RunWith(MockitoJUnitRunner.class)
 public class ToolControllerTest {
     @Mock
-    private MyTimetableService myTimetableService = Mockito.mock(MyTimetableService.class);
+    private MyTimetableServiceImpl myTimetableService = Mockito.mock(MyTimetableServiceImpl.class);
 
     @Mock
     private SakaiProxy sakaiProxy = Mockito.mock(SakaiProxy.class);
@@ -84,7 +84,7 @@ public class ToolControllerTest {
         testEvents.add(new Event());
         testEvents.add(new Event());
 
-        Mockito.when(myTimetableService.getEvents(Mockito.anyString(), Mockito.any(Configuration.class))).thenReturn(testEvents);
+        Mockito.when(myTimetableService.getUpcomingEvents(Mockito.anyString())).thenReturn(testEvents);
         Mockito.when(configuration.getApplicationUri()).thenReturn("https://timetable.institution.ac.uk/");
         Mockito.when(configuration.getApplicationTarget()).thenReturn("_blank");
 
@@ -110,7 +110,7 @@ public class ToolControllerTest {
         MockHttpServletResponse response = new MockHttpServletResponse();
         request.setMethod("GET");
 
-        Mockito.when(myTimetableService.getEvents(Mockito.anyString(), Mockito.any(Configuration.class))).thenThrow(LocalizableException.class);
+        Mockito.when(myTimetableService.getUpcomingEvents(Mockito.anyString())).thenThrow(LocalizableException.class);
 
         toolController.handleRequest(request, response);
         Assert.assertEquals(200, response.getStatus());

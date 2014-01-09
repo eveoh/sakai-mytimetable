@@ -14,7 +14,7 @@ This tool is tested with Sakai 2.8.0 (Kernel 1.2.1).
 
 2. Unzip de archive in the Tomcat home directory `$CATALINA_HOME`.
 
-3. Configure the tool in `sakai.properties`.
+3. Configure the tool in `$CATALINA_HOME/sakai/sakai-configuration.xml`.
 
 4. Restart Tomcat
 
@@ -22,29 +22,61 @@ This tool is tested with Sakai 2.8.0 (Kernel 1.2.1).
 
 ### Configuration
 
-Settings can be configured in `sakai.properties`, which is usually found in the $CATALINA_HOME/sakai folder. The
-following settings are used:
+Settings can be configured in `sakai-configuration.xml`, which is usually found in the $CATALINA_HOME/sakai folder. A
+full configuration looks like:
 
 ````
-# Key used for communicating with the MyTimetable API. Key should have elevated access. (default: none)
-apiKey@mytimetable.sakai.model.Configuration=1d30c1e9-cfcb-4893-9659-7618101d7ac9
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
-# Endpoint URL of the MyTimetable API. (default: none)
-apiEndpointUri@mytimetable.sakai.model.Configuration=https://timetable.institution.ac.uk/api/v0/
+    <bean id="mytimetable.sakai.model.Configuration" class="nl.eveoh.mytimetable.apiclient.configuration.Configuration">
+        <!-- A MyTimetable API key, as included in the api_tokens table. The key needs to have 'elevated' permissions
+        (is_elevated should be True) -->
+        <property name="apiKey" value="1d30c1e9-cfcb-4893-9659-7618101d7ac9"/>
 
-# URL to the full MyTimetable application. (default: none)
-applicationUri@mytimetable.sakai.model.Configuration=https://timetable.institution.ac.uk/
+        <!-- URL to your MyTimetable 2.3+ API. Needs to include the /api/v0/ part. Multiple URLs can be specified to
+                support failover in the case of issues with one of the application servers. -->
+        <property name="apiEndpointUris">
+            <list>
+                <value>https://timetable.institution.ac.uk/api/v0/</value>
+                <value>https://timetable-server-2.institution.ac.uk/api/v0/</value>
+            </list>
+        </property>
 
-# Target of the full application link. ('_self', '_blank', '_parent' or '_top', default: '_blank')
-applicationTarget@mytimetable.sakai.model.Configuration=_blank
+        <!-- Set this value to false to disable the strict hostname checks and allow any hostname in the certificate.
+        Useful when the connection is made using an internal hostname. The SSL certificate still has to be valid. -->
+        <property name="apiSslCnCheck" value="true"/>
 
-# Number of events to show in the tool. (default: 5)
-numberOfEvents@mytimetable.sakai.model.Configuration=5
+        <!-- Timeout for connecting to the MyTimetable API, in milliseconds -->
+        <property name="apiConnectTimeout" value="1000"/>
+
+        <!-- Timeout for the socket waiting for data from the MyTimetable API -->
+        <property name="apiSocketTimeout" value="1000"/>
+
+        <!-- Maximum number of concurrent connections in the MyTimetable API connection pool -->
+        <property name="apiMaxConnections" value="20"/>
+
+        <!-- Number of upcoming events shown in the tool -->
+        <property name="numberOfEvents" value="5"/>
+
+        <!-- URL to your MyTimetable installation, used in the interface to link to the full timetable. Add
+        ?requireLogin=true to automatically trigger authentication. -->
+        <property name="applicationUri" value="https://timetable.institution.ac.uk/"/>
+
+        <!-- Defines if the full MyTimetable interface is loaded in a new window (_blank) or in the current window (_top) -->
+        <property name="applicationTarget" value="_blank"/>
+
+        <!-- Domain to prefix usernames with. Configure this setting if your MyTimetable usernames include a Windows
+        domain name (DOMAIN\username) whereas your Sakai usernames do not have the domain part (username). -->
+        <property name="usernameDomainPrefix" value=""/>
+    </bean>
+</beans>
 ````
 
-## Building binaries
-
-### Creating a package
+## Building Tomcat overlay
 
 Run `./gradlew clean distZip` (*nix / Mac OS X) or `gradlew.bat clean distZip` (Windows). The 'assembly' module now
 contains the Tomcat overlay in ZIP format (in folder `assembly/build/distributions/`).
