@@ -15,6 +15,7 @@ ext {
 
 subprojects {
     apply plugin: 'java'
+    apply plugin: "jacoco"
 
     sourceCompatibility = 1.5
     targetCompatibility = 1.5
@@ -22,6 +23,12 @@ subprojects {
     repositories {
         maven {
             url "https://maven.eveoh.nl/content/groups/public"
+        }
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
         }
     }
 }
